@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web_Phishing</title>
+      
+	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'montserrat',sans-serif ;
+            }            
+            body{
+                background-image: url(wp2936323.jpg) ;
+                padding: 0px 10px;
+                background-size: cover;
+            }
+            .container{
+                max-width: 500px;
+                width: 100%;
+                background: transparent;
+                margin: 20px auto;
+                padding: 30px;
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+            }
+            .container .title{
+                font-size: 30px;
+                font-weight: 1000px;
+                margin-bottom: 25px;
+                color: rgb(2, 47, 145);
+                text-transform: uppercase;
+                text-align: center;
+            }
+            .container .form{
+                width: 100%;
+            }
+
+            .container .form .input_field{
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+            }
+            .container .form .input_field label{
+                width: 200px;
+                margin-right: 10px;
+                font-size: 14px;
+
+            }
+            .container .form .input_field .input,
+            .container .form .input_field .textarea{
+                width: 100%;
+                outline: none;
+                border: 1px solid #d5d5d5;
+                font-size: 10px;
+                padding: 8px 10px;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+
+            .container .form .input_field .textarea{
+                resize: none;
+                height: 90px;
+
+            }
+            .container .form .input_field .custom_radio{
+                position: relative;
+                
+                width: 100%;
+            }
+
+            .container .form .input_field .input:focus,
+            .container .form .input_field .textarea:focus,
+            .container .form .input_field select:focus{
+                border: 1px solid #fec107;
+
+            }
+            #next{
+                border-radius : 100px;
+                padding: 10px 15px;
+                background: rgb(40, 24, 252);
+                border: none;
+                outline: none;
+                color: white;
+                margin-top: 15px;
+
+            }
+            #next:hover{
+                background-color: rgb(247, 46, 10);
+                cursor: pointer;
+                color: black;
+            }
+
+            
+            #reset{
+                border-radius : 60px;
+                padding: 10px 15px;
+                background: rgb(10, 122, 167);
+                width: 70%;
+                border: none;
+                outline: none;
+                color: white;
+                margin-top: 25px;
+                margin-left: 100px;
+
+            }
+            #reset:hover{
+                background-color: rgb(16, 247, 47);
+                cursor: pointer;
+                color: black;
+            }
+
+
+            @media (max-width:420px){
+                .container .form .input_field{
+                flex-direction: column;
+                align-items: flex-start;
+                }
+                .container .form .input_field{
+                    margin-bottom: 5px;
+                }
+            }
+    </style>
+
+    <div class="container">
+        <div class="title">
+            PREDICTION
+        </div>
+        <form method="POST" action="{{ url_for('result')}}">
+
+            <div class="input_field">
+                <label>Domain</label>
+                <input type="text" placeholder="" class="input" name="Domain"required>
+            </div><br>
+            <div class ="input_field">
+                <label>Have_IP</label>
+                <input type="radio" name = "Have_IP"required value="1"> Yes
+                <input type="radio" name = "Have_IP"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Have_At</label>
+                <input type="radio" name = "Have_At"required value="1"> Yes
+                <input type="radio" name = "Have_At"required value="0"> No  
+            </div><br>
+            <div class ="input_field">
+                <label>URL_Length</label>
+                <input type="radio" name = "URL_Length"required value="1"> Yes
+                <input type="radio" name = "URL_Length"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>URL_Depth</label>
+                <input type="radio" name = "URL_Depth"required value="1"> Yes
+                <input type="radio" name = "URL_Depth"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Redirection</label>
+                <input type="radio" name = "Redirection"required value="1"> Yes
+                <input type="radio" name = "Redirection"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>https_Domain</label>
+                <input type="radio" name = "https_Domain"required value="1"> Yes
+                <input type="radio" name = "https_Domain"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>TinyURL</label>
+                <input type="radio" name = "TinyURL"required value="1"> Yes
+                <input type="radio" name = "TinyURL"required value="0"> No
+            </div><br>
+            <div class ="input_field">
+                <label>Prefix_Suffix</label>
+                <input type="radio" name = "Prefix_Suffix"required value="1"> Yes
+                <input type="radio" name = "Prefix_Suffix"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>DNS_Record</label>
+                <input type="radio" name = "DNS_Record"required value="1"> Yes
+                <input type="radio" name = "DNS_Record"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Web_Traffic</label>
+                <input type="radio" name = "Web_Traffic"required value="1"> Yes
+                <input type="radio" name = "Web_Traffic"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Domain_Age</label>
+                <input type="radio" name = "Domain_Age"required value="1"> Yes
+                <input type="radio" name = "Domain_Age"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Domain_End</label>
+                <input type="radio" name = "Domain_End"required value="1"> Yes
+                <input type="radio" name = "Domain_End"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>iFrame</label>
+                <input type="radio" name = "iFrame"required value="1"> Yes
+                <input type="radio" name = "iFrame"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Mouse_Over</label>
+                <input type="radio" name = "Mouse_Over"required value="1"> Yes
+                <input type="radio" name = "Mouse_Over"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Right_Click</label>
+                <input type="radio" name = "Right_Click"required value="1"> Yes
+                <input type="radio" name = "Right_Click"required value="0"> No 
+            </div><br>
+            <div class ="input_field">
+                <label>Web_Forwards</label>
+                <input type="radio" name = "Web_Forwards"required value="1"> Yes
+                <input type="radio" name = "Web_Forwards"required value="0"> No 
+            </div><br>
+
+
+            <center><button type="submit" id="next">PREDICT</button></center>
+
+        </form>
+    </div>
+</head>
+</html>
